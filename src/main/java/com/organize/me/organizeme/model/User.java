@@ -9,6 +9,8 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 @Entity(name = "User")
@@ -16,8 +18,17 @@ import java.time.LocalDate;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "FIRSTNAME")
+    private String firstname;
+
+    @Column(name = "LASTNAME")
+    private String lastname;
+
+    @Embedded
+    private Address Address;
 
     @CreatedDate
     @Column(name = "CREATION_DATE")
@@ -29,4 +40,9 @@ public class User implements Serializable {
     @Column(name = "PASSWORD")
     private String password;
 
+    @Transient
+    private String confirmPassword;
+
+    @ManyToMany
+    private List<Role> roles=new ArrayList<>();
 }
