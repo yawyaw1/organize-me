@@ -22,7 +22,7 @@ public interface UserService {
     /**
      * @param id
      */
-    void delete(Long id);
+    boolean delete(Long id);
 
     /**
      * @param id
