@@ -1,7 +1,7 @@
-package com.organize.me.organizeme.service;
+package com.organize.me.service.administration.service;
 
-import com.organize.me.organizeme.model.User;
-import com.organize.me.organizeme.repository.UserRepository;
+import com.organize.me.service.administration.model.User;
+import com.organize.me.service.administration.repository.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -84,7 +84,7 @@ public class UserServiceImplTest {
     @Test
     public void findById() {
 
-        
+
     }
 
     @Test

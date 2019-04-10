@@ -1,6 +1,6 @@
-package com.organize.me.organizeme.service;
+package com.organize.me.service.administration.service;
 
-import com.organize.me.organizeme.model.User;
+import com.organize.me.service.administration.model.User;
 
 import java.util.Optional;
 import java.util.stream.Stream;

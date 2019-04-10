@@ -1,6 +1,6 @@
-package com.organize.me.organizeme.repository;
+package com.organize.me.service.administration.repository;
 
-import com.organize.me.organizeme.model.User;
+import com.organize.me.service.administration.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

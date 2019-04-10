@@ -1,4 +1,4 @@
-package com.organize.me.organizeme.model;
+package com.organize.me.service.administration.model;
 
 
 import lombok.Data;
