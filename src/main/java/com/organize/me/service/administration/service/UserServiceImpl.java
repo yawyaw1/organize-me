@@ -1,7 +1,7 @@
-package com.organize.me.organizeme.service;
+package com.organize.me.service.administration.service;
 
-import com.organize.me.organizeme.model.User;
-import com.organize.me.organizeme.repository.UserRepository;
+import com.organize.me.service.administration.model.User;
+import com.organize.me.service.administration.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,10 +31,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void delete(Long id) {
+    public boolean delete(Long id) {
         if(id != null){
-            userRepository.findById(id);
+            userRepository.deleteById(id);
+            return true;
         }
+        return false;
     }
 
     @Override
@@ -47,6 +49,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Stream<User> fetchUsers() {
-        return null;
+        return userRepository.findAll().stream();
     }
 }

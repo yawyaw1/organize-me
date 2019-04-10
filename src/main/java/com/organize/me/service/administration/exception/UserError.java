@@ -1,4 +1,4 @@
-package com.organize.me.organizeme.exception;
+package com.organize.me.service.administration.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
