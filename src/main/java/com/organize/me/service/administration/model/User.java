@@ -1,6 +1,7 @@
 package com.organize.me.service.administration.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,9 +38,11 @@ public class User implements Serializable {
     @Column(name = "USERNAME")
     private String username;
 
+    @JsonIgnore
     @Column(name = "PASSWORD")
     private String password;
 
+    @JsonIgnore
     @Transient
     private String confirmPassword;
 

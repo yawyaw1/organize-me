@@ -3,13 +3,16 @@ package com.organize.me.service.administration.exception;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data @AllArgsConstructor
 public class UserError {
 
     private String message;
-    private String date;
-    private String technicakMessage;
+    private LocalDate date;
+    //private String technicalMessage;
     private String code;
+    private String path;
 
 
 }
