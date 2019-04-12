@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 
-@NoArgsConstructor @Data
+@NoArgsConstructor
+@Data
 @Entity(name = "Role")
 @Table(name = "ROLE")
 public class Role {
@@ -18,8 +19,4 @@ public class Role {
 
     @Column(name = "AUTHORITY")
     private String authority;
-
-    private User user;
-
-
 }

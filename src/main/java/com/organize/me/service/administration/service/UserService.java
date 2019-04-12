@@ -35,5 +35,10 @@ public interface UserService {
      */
     Stream<User> fetchUsers();
 
-
+    /**
+     *
+     * @param username
+     * @return
+     */
+    Optional<User> findUserByUsername(String username);
 }

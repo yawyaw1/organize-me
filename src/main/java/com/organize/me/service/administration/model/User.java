@@ -43,6 +43,6 @@ public class User implements Serializable {
     @Transient
     private String confirmPassword;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles=new ArrayList<>();
 }
