@@ -1,8 +1,7 @@
-package com.organize.me.service.administration.resource;
-
-
-import com.organize.me.service.administration.model.User;
-import com.organize.me.service.administration.service.UserService;
+package com.service.administration.resource;
+import com.service.administration.exception.UserNotFoundException;
+import com.service.administration.model.User;
+import com.service.administration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +16,11 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/api/users")
-public class UserRestController implements IUserRestController {
+public class UserRestController{
 
     @Autowired
     private UserService userService;
 
-    @Override
     @GetMapping(value = "/byUsername/{username}")
     public ResponseEntity<User> findUserByUsername(String username) {
         Optional<User> userByUsername = Optional.empty();
@@ -36,14 +34,12 @@ public class UserRestController implements IUserRestController {
     }
 
     @GetMapping
-    @Override
     public ResponseEntity<Stream<User>> findAllUsers() {
         Stream<User> users = userService.fetchUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @GetMapping(value = "/byId/{id}")
-    @Override
     public ResponseEntity<Optional<User>> findUserById(Long id) {
         Optional<User> userToFind = Optional.empty();
         if (id != null) {
@@ -56,7 +52,6 @@ public class UserRestController implements IUserRestController {
     }
 
     @PostMapping
-    @Override
     public ResponseEntity<Optional<User>> createUser(User user) {
         Optional<User> userToCreate = Optional.empty();
         if (user != null) {
