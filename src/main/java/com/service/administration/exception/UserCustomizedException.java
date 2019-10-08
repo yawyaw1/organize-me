@@ -12,7 +12,7 @@ import java.time.LocalDate;
 
 
 @ControllerAdvice
-public class UserCustomeException extends ResponseEntityExceptionHandler {
+public class UserCustomizedException extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(UserNotFoundException.class)
     public ResponseEntity<UserError> handleUserNotFoundException(UserNotFoundException ex, WebRequest request){
