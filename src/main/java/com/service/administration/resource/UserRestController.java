@@ -1,4 +1,4 @@
-package com.organize.me.service.administration.resource;
+package com.service.administration.resource;
 
 
 import com.organize.me.service.administration.model.User;
