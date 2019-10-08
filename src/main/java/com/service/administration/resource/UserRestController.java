@@ -1,9 +1,8 @@
-package com.service.administration.resource;
+package com.organize.me.service.administration.resource;
 
 
-import com.service.administration.exception.UserNotFoundException;
-import com.service.administration.model.User;
-import com.service.administration.service.UserService;
+import com.organize.me.service.administration.model.User;
+import com.organize.me.service.administration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
