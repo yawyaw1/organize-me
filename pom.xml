@@ -8,10 +8,10 @@
         <version>2.1.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.service.administration</groupId>
-    <artifactId>service-administration</artifactId>
+    <groupId>com.service.admin</groupId>
+    <artifactId>service-admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>service-administration</name>
+    <name>service-admin</name>
     <description>Microservice handles administration</description>
 
     <properties>
