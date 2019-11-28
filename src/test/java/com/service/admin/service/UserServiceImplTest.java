@@ -36,7 +36,7 @@ public class UserServiceImplTest {
         when(userRepository.saveAndFlush(user)).thenReturn(user);
 
         //When
-        User userToCreate = userService.create(user).get();
+        User userToCreate = userService.create(user);
 
         //Then
         assertNotNull(userToCreate);
@@ -58,7 +58,7 @@ public class UserServiceImplTest {
         when(userRepository.saveAndFlush(userToUpdate)).thenReturn(userToUpdate);
 
         //When
-        User updatedUser = userService.update(userToUpdate).get();
+        User updatedUser = userService.update(userToUpdate);
 
         //Then
         assertNotNull(updatedUser);

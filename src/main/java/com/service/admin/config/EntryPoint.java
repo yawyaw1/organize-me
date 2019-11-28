@@ -38,6 +38,5 @@ public class EntryPoint extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin();
-
     }
 }

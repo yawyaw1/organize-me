@@ -20,31 +20,31 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public Optional<User> create(User user) {
+    public User create(User user) {
         if (user != null) {
-            List<Role> roles= new ArrayList<>();
-            Role role=new Role();
+            List<Role> roles = new ArrayList<>();
+            Role role = new Role();
             role.setAuthority("ROLE_USER");
 
             roles.add(role);
 
-            BCryptPasswordEncoder bCryptPasswordEncoder=new BCryptPasswordEncoder();
+            BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
             String cryptPwd = bCryptPasswordEncoder.encode(user.getPassword());
 
             user.setPassword(cryptPwd);
             user.setRoles(roles);
 
-            return Optional.of(userRepository.saveAndFlush(user));
+            return userRepository.saveAndFlush(user);
         }
-        return Optional.empty();
+        return user;
     }
 
     @Override
-    public Optional<User> update(User user) {
+    public User update(User user) {
         if (user != null) {
-            return Optional.of(userRepository.saveAndFlush(user));
+            return userRepository.saveAndFlush(user);
         }
-        return Optional.empty();
+        return user;
     }
 
     @Override
@@ -65,8 +65,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Stream<User> fetchUsers() {
-        return userRepository.findAll().stream();
+    public List<User> fetchUsers() {
+        return userRepository.findAll();
     }
 
     @Override
