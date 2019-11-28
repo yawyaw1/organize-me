@@ -29,6 +29,7 @@ public class UserServiceImplTest {
         user = new User();
         user.setFirstname("firstname");
         user.setLastname("lastname");
+        user.setPassword("password");
     }
 
     @Test
